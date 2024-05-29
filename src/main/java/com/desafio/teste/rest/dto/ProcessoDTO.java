@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @Builder
@@ -17,14 +18,16 @@ public class ProcessoDTO {
 
     private String npu;
 
-    private LocalDate dataCadastro;
+    private LocalDateTime dataCadastro;
 
-    private LocalDate dataVisualizacao;
+    private LocalDateTime dataVisualizacao;
 
     private String municipio;
 
     private String uf;
 
     private byte[] documento;
+
+    private String nomeDocumento;
 
 }

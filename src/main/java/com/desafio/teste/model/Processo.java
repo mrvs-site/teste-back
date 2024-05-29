@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Data
 @Builder
@@ -23,10 +24,10 @@ public class Processo {
     private String npu;
 
     @Column(name = "data_cadastro", nullable = false)
-    private LocalDate dataCadastro;
+    private LocalDateTime dataCadastro;
 
     @Column(name = "data_visualizacao")
-    private LocalDate dataVisualizacao;
+    private LocalDateTime dataVisualizacao;
 
     @Column(nullable = false)
     private String municipio;
@@ -38,9 +39,12 @@ public class Processo {
     @Column(nullable = true)
     private byte[] documento;
 
+    @Column(name = "nome_documento")
+    private String nomeDocumento;
+
     @PrePersist
     public void prePersist() {
-        setDataCadastro(LocalDate.now());
+        setDataCadastro(LocalDateTime.now());
     }
 
 

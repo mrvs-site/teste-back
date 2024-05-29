@@ -9,6 +9,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,6 +66,17 @@ public class ProcessoService {
 
     }
 
+    public ProcessoDTO dataVisualizacao(int id){
+
+        Processo processo = repository.findById(id).orElseThrow(() -> new RuntimeException("Não encontrado"));
+
+        if(processo.getDataVisualizacao() == null){
+            processo.setDataVisualizacao(LocalDateTime.now());
+           return ProcessoToDto(repository.save(processo));
+        }else{
+            return ProcessoToDto(processo);
+        }
+    }
 
     private Processo DtoToProcesso(ProcessoDTO dto) {
 
@@ -76,6 +88,7 @@ public class ProcessoService {
                 .dataCadastro(dto.getDataCadastro())
                 .dataVisualizacao(dto.getDataVisualizacao())
                 .documento(dto.getDocumento())
+                .nomeDocumento(dto.getNomeDocumento())
                 .build();
     }
 
@@ -90,6 +103,7 @@ public class ProcessoService {
                 .dataCadastro(p.getDataCadastro())
                 .dataVisualizacao(p.getDataVisualizacao())
                 .documento(p.getDocumento())
+                .nomeDocumento(p.getNomeDocumento())
                 .build();
     }
 

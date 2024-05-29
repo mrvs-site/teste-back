@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @SpringBootApplication
 public class TesteApplication {
@@ -27,8 +27,7 @@ public class TesteApplication {
 					.npu("12345678909")
 					.municipio("Recife")
 					.uf("PE")
-					.dataCadastro(LocalDate.now())
-					.dataVisualizacao(LocalDate.now())
+					.dataCadastro(LocalDateTime.now())
 					.build();
 
 			repository.save(p);
@@ -37,8 +36,7 @@ public class TesteApplication {
 					.npu("9845606506")
 					.municipio("Olinda")
 					.uf("PE")
-					.dataCadastro(LocalDate.now())
-					.dataVisualizacao(LocalDate.now())
+					.dataCadastro(LocalDateTime.now())
 					.build();
 
 			repository.save(p1);
@@ -47,8 +45,7 @@ public class TesteApplication {
 					.npu("32102506506")
 					.municipio("Bonito")
 					.uf("PE")
-					.dataCadastro(LocalDate.now())
-					.dataVisualizacao(LocalDate.now())
+					.dataCadastro(LocalDateTime.now())
 					.build();
 
 			repository.save(p2);
@@ -57,8 +54,8 @@ public class TesteApplication {
 					.npu("00111220120")
 					.municipio("Belo Horizonte")
 					.uf("MG")
-					.dataCadastro(LocalDate.now())
-					.dataVisualizacao(LocalDate.now())
+					.dataCadastro(LocalDateTime.now())
+					.dataVisualizacao(LocalDateTime.now())
 					.build();
 
 			repository.save(p3);
@@ -68,8 +65,7 @@ public class TesteApplication {
 					.npu("55011011")
 					.municipio("FLorianópolis")
 					.uf("SC")
-					.dataCadastro(LocalDate.now())
-					.dataVisualizacao(LocalDate.now())
+					.dataCadastro(LocalDateTime.now())
 					.build();
 
 			repository.save(p4);
@@ -79,8 +75,7 @@ public class TesteApplication {
 					.npu("6633225451")
 					.municipio("Salvador")
 					.uf("BA")
-					.dataCadastro(LocalDate.now())
-					.dataVisualizacao(LocalDate.now())
+					.dataCadastro(LocalDateTime.now())
 					.build();
 
 			repository.save(p5);
@@ -90,8 +85,7 @@ public class TesteApplication {
 					.npu("0002223255")
 					.municipio("Natal")
 					.uf("RN")
-					.dataCadastro(LocalDate.now())
-					.dataVisualizacao(LocalDate.now())
+					.dataCadastro(LocalDateTime.now())
 					.build();
 
 			repository.save(p6);
@@ -100,8 +94,8 @@ public class TesteApplication {
 					.npu("9845606506")
 					.municipio("Olinda")
 					.uf("PE")
-					.dataCadastro(LocalDate.now())
-					.dataVisualizacao(LocalDate.now())
+					.dataCadastro(LocalDateTime.now())
+					.dataVisualizacao(LocalDateTime.now())
 					.build();
 
 			repository.save(p7);
@@ -111,8 +105,7 @@ public class TesteApplication {
 					.npu("33366555221")
 					.municipio("Salgueiro")
 					.uf("PE")
-					.dataCadastro(LocalDate.now())
-					.dataVisualizacao(LocalDate.now())
+					.dataCadastro(LocalDateTime.now())
 					.build();
 
 			repository.save(p8);
@@ -122,8 +115,8 @@ public class TesteApplication {
 					.npu("98456065060000")
 					.municipio("Pesqueira")
 					.uf("PE")
-					.dataCadastro(LocalDate.now())
-					.dataVisualizacao(LocalDate.now())
+					.dataCadastro(LocalDateTime.now())
+					.dataVisualizacao(LocalDateTime.now())
 					.build();
 
 			repository.save(p9);
@@ -132,8 +125,8 @@ public class TesteApplication {
 					.npu("9845606343433506")
 					.municipio("Caruaru")
 					.uf("PE")
-					.dataCadastro(LocalDate.now())
-					.dataVisualizacao(LocalDate.now())
+					.dataCadastro(LocalDateTime.now())
+					.dataVisualizacao(LocalDateTime.now())
 					.build();
 
 			repository.save(p10);
@@ -142,8 +135,8 @@ public class TesteApplication {
 					.npu("5054065087")
 					.municipio("Alagoas")
 					.uf("AL")
-					.dataCadastro(LocalDate.now())
-					.dataVisualizacao(LocalDate.now())
+					.dataCadastro(LocalDateTime.now())
+					.dataVisualizacao(LocalDateTime.now())
 					.build();
 
 			repository.save(p11);

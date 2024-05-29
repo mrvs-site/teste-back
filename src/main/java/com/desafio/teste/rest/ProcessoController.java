@@ -3,9 +3,7 @@ package com.desafio.teste.rest;
 import com.desafio.teste.model.Processo;
 import com.desafio.teste.rest.dto.ProcessoDTO;
 import com.desafio.teste.service.ProcessoService;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import jakarta.servlet.http.Part;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
@@ -24,9 +22,9 @@ public class ProcessoController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ProcessoDTO create(@RequestParam("user") String user, @RequestParam("file") MultipartFile file) throws IOException {
+    public ProcessoDTO create(@RequestParam("dados") String dados, @RequestParam("file") MultipartFile file) throws IOException {
 
-        ProcessoDTO dto = new ObjectMapper().readValue(user, ProcessoDTO.class);
+        ProcessoDTO dto = new ObjectMapper().readValue(dados, ProcessoDTO.class);
         dto.setDocumento(file.getBytes());
 
         return service.create(dto);
@@ -40,7 +38,7 @@ public class ProcessoController {
     }
 
     @RequestMapping("{id}")
-    public ProcessoDTO findById(@PathVariable int id) {
+    public ProcessoDTO findById(@RequestParam int id) {
 
         return service.findByID(id);
     }
@@ -55,11 +53,18 @@ public class ProcessoController {
         return service.getAll(pagina, tamanho, campo, direcao);
     }
 
-    @PutMapping("{id}")
-    public ProcessoDTO update(@RequestBody ProcessoDTO dto,
-                              @PathVariable int id) {
+    @PutMapping
+    public ProcessoDTO update(@RequestParam("dados") String dados, @RequestParam("file") MultipartFile file) throws IOException {
+
+        ProcessoDTO dto = new ObjectMapper().readValue(dados, ProcessoDTO.class);
+        dto.setDocumento(file.getBytes());
 
         return service.update(dto);
     }
 
+    @PatchMapping("{id}")
+    public ProcessoDTO dataVisualizacao(@PathVariable int id) {
+
+      return  service.dataVisualizacao(id);
+    }
 }
